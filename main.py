@@ -2,12 +2,16 @@ import typer
 from rich.console import Console
 from rich.panel import Panel
 from src.modules.recon import run_recon
+from src.modules.port_scanner import run_port_scan
 
 app = typer.Typer()
 console = Console()
 
 @app.command()
-def scan(target: str):
+def scan(
+    target: str,
+    ports: bool = typer.Option(False, "--ports", help="Run port scan")
+):
     """Run a security scan on a target URL or IP."""
     console.print(Panel(
         f"[bold green]WWSAF Starting...[/bold green]\n"
@@ -16,6 +20,9 @@ def scan(target: str):
         border_style="green"
     ))
     run_recon(target)
+
+    if ports:
+        run_port_scan(target)
 
 if __name__ == "__main__":
     app()

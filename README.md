@@ -159,8 +159,8 @@ The author is not responsible for any misuse.
 
 ## 👩‍💻 Author
 
-**Janvi** — M.Tech Student  
-GitHub: [@jitishakarnam](https://github.com/jitishakarnam)
+**Jitisha Karnani** — M.Tech Student  
+GitHub: [@jitishakarnam](https://github.com/jitishakarnani)
 
 ---
 

@@ -144,3 +144,9 @@ def run_vuln_check(target: str):
     console.print(f"  [yellow]Medium: {severity_counts['MEDIUM']}[/yellow]")
     console.print(f"  [blue]Low:   {severity_counts['LOW']}[/blue]")
     console.print(f"  [green]Info:  {severity_counts['INFO']}[/green]")
+
+   
+    return [
+        {"finding": f, "severity": s, "detail": d}
+        for f, s, d in all_findings
+    ]

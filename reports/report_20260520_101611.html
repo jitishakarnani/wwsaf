@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WWSAF Report — http://test.com</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            padding: 40px 20px;
+        }
+
+        .container { max-width: 960px; margin: 0 auto; }
+
+        .header {
+            border-left: 4px solid #00ff88;
+            padding: 20px 24px;
+            background: #161b22;
+            border-radius: 8px;
+            margin-bottom: 32px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #00ff88;
+            margin-bottom: 8px;
+        }
+
+        .header p { color: #8b949e; font-size: 14px; }
+
+        .score-box {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 12px;
+        }
+
+        .score-high { background: #3d1f1f; color: #ff6b6b; border: 1px solid #ff6b6b; }
+        .score-medium { background: #2d2410; color: #ffa94d; border: 1px solid #ffa94d; }
+        .score-low { background: #1a2a1a; color: #00ff88; border: 1px solid #00ff88; }
+
+        .section {
+            background: #161b22;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid #30363d;
+        }
+
+        .section h2 {
+            font-size: 16px;
+            color: #58a6ff;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #30363d;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th {
+            text-align: left;
+            padding: 10px 12px;
+            background: #0d1117;
+            color: #8b949e;
+            font-weight: 500;
+        }
+
+        td { padding: 10px 12px; border-top: 1px solid #21262d; }
+
+        tr:hover td { background: #1c2128; }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .badge-high { background: #3d1f1f; color: #ff6b6b; }
+        .badge-medium { background: #2d2410; color: #ffa94d; }
+        .badge-low { background: #1a2d3d; color: #58a6ff; }
+        .badge-info { background: #1a2a1a; color: #00ff88; }
+        .badge-open { background: #1a2a1a; color: #00ff88; }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .summary-card {
+            background: #161b22;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #30363d;
+        }
+
+        .summary-card .number {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .summary-card .label {
+            font-size: 12px;
+            color: #8b949e;
+        }
+
+        .num-high { color: #ff6b6b; }
+        .num-medium { color: #ffa94d; }
+        .num-low { color: #58a6ff; }
+        .num-info { color: #00ff88; }
+
+        .footer {
+            text-align: center;
+            color: #8b949e;
+            font-size: 12px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>WWSAF Security Audit Report</h1>
+        <p>Target: http://test.com</p>
+        <p>Generated: 2026-05-20 10:16:11</p>
+        
+            <span class="score-box score-low">Overall Risk: LOW</span>
+        
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary-grid">
+        <div class="summary-card">
+            <div class="number num-high">0</div>
+            <div class="label">High Severity</div>
+        </div>
+        <div class="summary-card">
+            <div class="number num-medium">0</div>
+            <div class="label">Medium Severity</div>
+        </div>
+        <div class="summary-card">
+            <div class="number num-low">0</div>
+            <div class="label">Low Severity</div>
+        </div>
+        <div class="summary-card">
+            <div class="number num-info">0</div>
+            <div class="label">Informational</div>
+        </div>
+    </div>
+
+    <!-- Recon Results -->
+    <div class="section">
+        <h2>Recon Results</h2>
+        <table>
+            <tr><th>Property</th><th>Value</th></tr>
+            
+            <tr><td>Status</td><td>200</td></tr>
+            
+        </table>
+    </div>
+
+    <!-- Port Scan Results -->
+    
+
+    <!-- Vulnerability Findings -->
+    
+
+    <div class="footer">
+        <p>Generated by WWSAF — Windows Web Security & Audit Framework</p>
+    </div>
+
+</div>
+</body>
+</html>

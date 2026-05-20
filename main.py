@@ -4,6 +4,7 @@ from rich.panel import Panel
 from src.modules.recon import run_recon
 from src.modules.port_scanner import run_port_scan
 from src.modules.vuln_checker import run_vuln_check
+from src.modules.reporter import generate_report
 
 app = typer.Typer()
 console = Console()
@@ -12,7 +13,8 @@ console = Console()
 def scan(
     target: str,
     ports: bool = typer.Option(False, "--ports", help="Run port scan"),
-    vuln: bool = typer.Option(False, "--vuln", help="Run vulnerability check")
+    vuln: bool = typer.Option(False, "--vuln", help="Run vulnerability check"),
+    report: bool = typer.Option(False, "--report", help="Generate HTML report")
 ):
     """Run a security scan on a target URL or IP."""
     console.print(Panel(
@@ -22,13 +24,19 @@ def scan(
         border_style="green"
     ))
 
-    run_recon(target)
+    recon_data = run_recon(target)
+    port_data = []
+    vuln_data = []
 
     if ports:
-        run_port_scan(target)
+        port_data = run_port_scan(target)
 
     if vuln:
-        run_vuln_check(target)
+        vuln_data = run_vuln_check(target)
+
+    if report:
+        filename = generate_report(target, recon_data, port_data, vuln_data)
+        console.print(f"\n[bold green]Report saved:[/bold green] {filename}")
 
 if __name__ == "__main__":
     app()

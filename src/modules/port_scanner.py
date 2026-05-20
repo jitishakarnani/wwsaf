@@ -110,3 +110,17 @@ def run_port_scan(target: str):
 
     console.print(table)
     console.print(f"\n[bold green]Total open ports found: {len(open_ports)}[/bold green]")
+
+    result = []
+    high_risk = [21, 23, 135, 139, 445, 1433, 3389, 5900]
+    medium_risk = [22, 25, 53, 110, 143, 3306, 5432, 6379, 27017]
+    for port in open_ports:
+        service = COMMON_PORTS.get(port, "Unknown")
+        if port in high_risk:
+            risk = "HIGH"
+        elif port in medium_risk:
+            risk = "MEDIUM"
+        else:
+            risk = "LOW"
+        result.append({"port": port, "service": service, "risk": risk})
+    return result

@@ -68,3 +68,13 @@ def run_recon(target: str):
         console.print("\n[bold green]Present Security Headers:[/bold green]")
         for h in present:
             console.print(f"  [green]✓[/green] {h}")
+    return {
+        "Target URL": str(response.url),
+        "Status Code": str(response.status_code),
+        "Response Time": f"{elapsed} ms",
+        "Server": server,
+        "Powered By": powered_by,
+        "Content Type": content_type,
+        "Security Headers OK": str(len(present)),
+        "Security Headers Missing": str(len(missing))
+    }
